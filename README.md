@@ -79,7 +79,7 @@ target dir with `KESTREL_INSTALL=$HOME/.local/bin`.
 Prefer to do it by hand? Download `kestrel-linux-<arch>` and `SHA256SUMS` from a
 release, run `sha256sum -c SHA256SUMS`, then move the binary onto your `PATH`.
 
-Kestrel needs `llc` (LLVM) and `cc` (a C compiler) at compile time:
+Kestrel needs `llc` (LLVM 14 or newer) and `cc` (a C compiler) at compile time:
 `sudo apt-get install -y llvm clang` (Debian/Ubuntu) or `brew install llvm` (macOS).
 
 Every published release is proven against a suite of real programs — see the

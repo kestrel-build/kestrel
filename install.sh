@@ -104,6 +104,6 @@ else
   info "Add ${dest} to your PATH, then run: kestrel version"
 fi
 info ""
-info "Kestrel needs 'llc' (LLVM) and 'cc' (a C compiler) at compile time."
+info "Kestrel needs 'llc' (LLVM 14 or newer) and 'cc' (a C compiler) at compile time."
 info "  Debian/Ubuntu:  sudo apt-get install -y llvm clang"
 info "  macOS (brew):   brew install llvm"
