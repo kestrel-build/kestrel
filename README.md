@@ -79,7 +79,7 @@ curl -fsSL https://raw.githubusercontent.com/kestrel-build/kestrel/main/install.
 The installer detects your OS/architecture, downloads the matching binary from
 the latest [GitHub Release](https://github.com/kestrel-build/kestrel/releases),
 **verifies its SHA-256 checksum** (and GPG signature when present), and installs
-`kestrel`. Pin a version with `KESTREL_VERSION=v1.0.0-beta.10`, or change the
+`kestrel`. Pin a version with `KESTREL_VERSION=v1.0.0-beta.11`, or change the
 target dir with `KESTREL_INSTALL=$HOME/.local/bin`.
 
 Prefer to do it by hand? Download `kestrel-linux-<arch>` and `SHA256SUMS` from a
