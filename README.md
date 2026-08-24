@@ -64,6 +64,8 @@ Most security bugs fall into a handful of known categories. Kestrel prevents the
 - **Inline assembly** — `asm { }` blocks with GCC/LLVM constraints
 - **Concurrency** — `spawn`, `chan`, `atomic`, `mutex`, `rwlock`, `spinlock`, `semaphore`
 - **Testing** — `@test` attribute, `assert_eq`, `kestrel test`
+- **Cross-compilation** — `kestrel build --target aarch64` builds for **11 CPU architectures** in one command (x86_64, ARM 32/64, RISC-V, PowerPC 32/64, MIPS BE/LE, s390x) — every word size and byte order
+- **Build profiles** — `kestrel.toml` profiles: `kestrel build` is a fast, debuggable `draft`; `kestrel build --release` is optimized, stripped, and anonymized (reads as a generic C binary)
 - **Single binary** — one tool: build, run, test, check, format
 
 ---
@@ -77,7 +79,7 @@ curl -fsSL https://raw.githubusercontent.com/kestrel-build/kestrel/main/install.
 The installer detects your OS/architecture, downloads the matching binary from
 the latest [GitHub Release](https://github.com/kestrel-build/kestrel/releases),
 **verifies its SHA-256 checksum** (and GPG signature when present), and installs
-`kestrel`. Pin a version with `KESTREL_VERSION=v1.0.0-alpha.3`, or change the
+`kestrel`. Pin a version with `KESTREL_VERSION=v1.0.0-beta.10`, or change the
 target dir with `KESTREL_INSTALL=$HOME/.local/bin`.
 
 Prefer to do it by hand? Download `kestrel-linux-<arch>` and `SHA256SUMS` from a
@@ -177,8 +179,15 @@ Each release also ships a `SHA256SUMS` file (and, when signing is enabled, a
 |---|---|
 | `kestrel-linux-x86_64` | Linux x86-64 binary |
 | `kestrel-linux-aarch64` | Linux ARM64 binary (also runs on Raspberry Pi 3/4/5) |
+| `kestrel-linux-ppc64le` | Linux 64-bit PowerPC (little-endian) binary |
+| `kestrel-linux-riscv64` | Linux 64-bit RISC-V binary |
+| `kestrel-linux-armv7` | Linux 32-bit ARM (hard-float) binary |
+| `kestrel-linux-s390x` | Linux 64-bit IBM Z (big-endian) binary |
 | `SHA256SUMS` | SHA-256 checksums for the binaries |
 | `SHA256SUMS.asc` | Detached GPG signature of `SHA256SUMS` (when available) |
+
+Any of these can additionally **cross-compile** your programs to eleven CPU
+architectures via `kestrel build --target <arch>`.
 
 ---
 
