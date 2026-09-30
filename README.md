@@ -204,9 +204,12 @@ is everything you need to *use* the language:
 | [kestrel-build.github.io](https://kestrel-build.github.io) | Documentation |
 
 The **compiler source is hosted privately** and is not part of this repository —
-its `Code` tab is intentionally limited to the installer and docs. Every release
-is built by CI, checksummed, and verified against the public example suite before
-it ships.
+its `Code` tab is intentionally limited to the installer and docs. **Kestrel is
+self-hosted:** the compiler is written entirely in Kestrel and builds itself, with
+no Rust or other language involved (the transitional Rust bootstrap was removed in
+`v1.0.0-rc.1` — see [the announcement](https://kestrel-build.github.io/blog/)).
+Every release is built by CI, checksummed, and verified against the public example
+suite before it ships.
 
 ## License
 
